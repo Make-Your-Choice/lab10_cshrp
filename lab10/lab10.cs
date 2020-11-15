@@ -159,9 +159,11 @@ namespace lab9_app {
 			}
 		}
 	}
-	class lab9 {
+	class lab10 {
+		static Exception e1;
 		static void Main(string[] args) {
-			int x, y, z, n, profit, popularity = 1; //переменные
+			int x = 0, y = 0, z = 0, n, profit, popularity = 1; //переменные
+			String x1, y1, z1;
 			String s1, s2, s3; //строки
 			Console.WriteLine("Input information about the 1 book\n"); //ввод информации о книге
 			Console.WriteLine("Input number of specials: ");
@@ -179,12 +181,61 @@ namespace lab9_app {
 			s2 = Console.ReadLine();
 			Console.WriteLine("Input genre: ");
 			s3 = Console.ReadLine();
-			Console.WriteLine("Input price: ");
-			x = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Input number in stock: ");
-			y = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Input popularity: ");
-			z = Convert.ToInt32(Console.ReadLine());
+			int r;
+			r = 0;
+			while(r == 0)
+			{
+				Console.WriteLine("Input price: ");
+				r = 1;
+				x1 = Console.ReadLine();
+				try {
+					if(!Char.IsDigit(x1,0))
+						throw e1 = new Exception("Incorrect input\n");
+					x = Convert.ToInt32(x1);
+				}
+				catch(Exception e1) {
+					Console.WriteLine("Incorrect value\n");
+					r = 0;
+				}
+				if (r == 1)
+					continue;
+			}
+			r = 0;
+			while(r == 0)
+			{
+				Console.WriteLine("Input number in stock: ");
+				r = 1;
+				y1 = Console.ReadLine();
+				try {
+					if(!Char.IsDigit(y1,0))
+						throw e1 = new Exception("Incorrect input\n");
+					y = Convert.ToInt32(y1);
+				}
+				catch(Exception e1) {
+					Console.WriteLine("Incorrect value\n");
+					r = 0;
+				}
+				if (r == 1)
+					continue;
+			}
+			r = 0;
+			while(r == 0)
+			{
+				Console.WriteLine("Input popularity: ");
+				r = 1;
+				z1 = Console.ReadLine();
+				try {
+					if(!Char.IsDigit(z1,0))
+						throw e1 = new Exception("Incorrect input\n");
+					z = Convert.ToInt32(z1);
+				}
+				catch(Exception e1) {
+					Console.WriteLine("Incorrect value\n");
+					r = 0;
+				}
+				if (r == 1)
+					continue;
+			}
 			book_store book1 = new book_store(s1, s2, s3, x, y, z, n, spec_offer1);
 			book1.output();
 			book_store book2 = new book_store(spec_offer2);
