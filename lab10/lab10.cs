@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace lab9_app {
+namespace lab10_app {
 	class special {
 		public int bonus_num; //число бонусов
 		public int continuation; //длительность в днях
@@ -183,54 +183,54 @@ namespace lab9_app {
 			s3 = Console.ReadLine();
 			int r;
 			r = 0;
-			while(r == 0)
+			while(r == 0) //проверка корректности ввода цены
 			{
 				Console.WriteLine("Input price: ");
 				r = 1;
 				x1 = Console.ReadLine();
 				try {
-					if(!Char.IsDigit(x1,0))
+					if(!Char.IsDigit(x1,0)) //если цена - цифра
 						throw e1 = new Exception("Incorrect input\n");
 					x = Convert.ToInt32(x1);
 				}
 				catch(Exception e1) {
-					Console.WriteLine("Incorrect value\n");
+					Console.WriteLine("Incorrect value\n"); //сообщение об ошибке
 					r = 0;
 				}
 				if (r == 1)
 					continue;
 			}
 			r = 0;
-			while(r == 0)
+			while(r == 0) //проверка корректности ввода количества на складе
 			{
 				Console.WriteLine("Input number in stock: ");
 				r = 1;
 				y1 = Console.ReadLine();
 				try {
-					if(!Char.IsDigit(y1,0))
+					if(!Char.IsDigit(y1,0)) //если количество на складе - цифра
 						throw e1 = new Exception("Incorrect input\n");
 					y = Convert.ToInt32(y1);
 				}
 				catch(Exception e1) {
-					Console.WriteLine("Incorrect value\n");
+					Console.WriteLine("Incorrect value\n"); //сообщение об ошибке
 					r = 0;
 				}
 				if (r == 1)
 					continue;
 			}
 			r = 0;
-			while(r == 0)
+			while(r == 0) //проверка корректности ввода популярности
 			{
 				Console.WriteLine("Input popularity: ");
 				r = 1;
 				z1 = Console.ReadLine();
 				try {
-					if(!Char.IsDigit(z1,0))
+					if(!Char.IsDigit(z1,0)) //если популярность - цифра
 						throw e1 = new Exception("Incorrect input\n");
 					z = Convert.ToInt32(z1);
 				}
 				catch(Exception e1) {
-					Console.WriteLine("Incorrect value\n");
+					Console.WriteLine("Incorrect value\n"); //сообщение об ошибке
 					r = 0;
 				}
 				if (r == 1)
